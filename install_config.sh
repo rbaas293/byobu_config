@@ -13,9 +13,14 @@ if ! command_exists byobu; then
     sudo apt install byobu -y
 fi 
 
-write ${BLUE}"Backuing up Orignal Files."${RESET}
-mv /usr/share/byobu/keybindings/f-keys.tmux /usr/share/byobu/keybindings/f-keys.tmux.bak
-mv /usr/share/doc/byobu/help.tmux.txt /usr/share/doc/byobu/help.tmux.txt.bak
+write ${BLUE}"Backing up Orignal Files."${RESET}
+# If backup exists, then don't overwrite it.
+if ! check_file /usr/share/byobu/keybindings/f-keys.tmux.bak c &> /dev/null; then
+    mv /usr/share/byobu/keybindings/f-keys.tmux /usr/share/byobu/keybindings/f-keys.tmux.bak
+fi
+if ! check_file /usr/share/doc/byobu/help.tmux.txt.bak c &> /dev/null; then
+    mv /usr/share/doc/byobu/help.tmux.txt /usr/share/doc/byobu/help.tmux.txt.bak
+fi
 
 write ${BLUE}"Copying New Configs."${RESET}
 cp f-keys.tmux /usr/share/byobu/keybindings/f-keys.tmux
