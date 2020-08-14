@@ -1,3 +1,4 @@
+#!/bin/bash
 source libsh/std.sh
 make_sh_macos_compatible
 
