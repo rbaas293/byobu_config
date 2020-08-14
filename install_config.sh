@@ -31,6 +31,13 @@ if ! grep 'export TERM="xterm-256color"' ~/.bashrc; then
     verbose "Appending line to .bashrc"
     echo 'export TERM="xterm-256color"' >> ~/.bashrc
 fi
+
+if ! grep 'set -g default-terminal "screen-256color"' ~/.tmux.conf; then
+    verbose "Appending line to .tmux.conf"
+    echo 'set -g default-terminal "screen-256color"' >> ~/.bashrc
+fi
+
+set -g default-terminal "screen-256color"
  
 verbose "Checking New Configs.."
 check_file /usr/share/byobu/keybindings/f-keys.tmux
