@@ -3,6 +3,7 @@
 ## Install Script
 ```
 ./install_config.sh [-v|-verbose]
+```
 
 ## Manuel
 ```
