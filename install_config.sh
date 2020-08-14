@@ -27,12 +27,12 @@ cp f-keys.tmux /usr/share/byobu/keybindings/f-keys.tmux
 cp help.tmux.txt /usr/share/doc/byobu/help.tmux.txt
 
 
-if ! grep 'export TERM="xterm-256color"' ~/.bashrc; then
+if ! grep 'export TERM="xterm-256color"' ~/.bashrc > /dev/null; then
     verbose "Appending line to .bashrc"
     echo 'export TERM="xterm-256color"' >> ~/.bashrc
 fi
 
-if ! grep 'set -g default-terminal "screen-256color"' ~/.tmux.conf; then
+if ! grep 'set -g default-terminal "screen-256color"' ~/.tmux.conf > /dev/null; then
     verbose "Appending line to .tmux.conf"
     echo 'set -g default-terminal "screen-256color"' >> ~/.tmux.conf
 fi
