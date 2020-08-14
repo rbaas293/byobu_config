@@ -5,13 +5,13 @@ make_sh_macos_compatible
 # Notify user and exit if not root.
 need_root
 
-param switch v 
+param switch v
 param switch verbose
 
 if ! command_exists byobu; then
     write ${BLUE}"byobu Not Installed. Installing..."${RESET}
     sudo apt install byobu -y
-fi 
+fi
 
 write ${BLUE}"Backing up Orignal Files."${RESET}
 # If backup exists, then don't overwrite it.
@@ -34,11 +34,9 @@ fi
 
 if ! grep 'set -g default-terminal "screen-256color"' ~/.tmux.conf; then
     verbose "Appending line to .tmux.conf"
-    echo 'set -g default-terminal "screen-256color"' >> ~/.bashrc
+    echo 'set -g default-terminal "screen-256color"' >> ~/.tmux.conf
 fi
 
-set -g default-terminal "screen-256color"
- 
 verbose "Checking New Configs.."
 check_file /usr/share/byobu/keybindings/f-keys.tmux
 check_file /usr/share/doc/byobu/help.tmux.txt
