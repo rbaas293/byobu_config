@@ -2,6 +2,7 @@
 
 ## Install Script
 ```
+git submodule init && git submodule update
 ./install_config.sh [-v|-verbose]
 ```
 
