@@ -21,6 +21,12 @@ write ${BLUE}"Copying New Configs."${RESET}
 cp f-keys.tmux /usr/share/byobu/keybindings/f-keys.tmux
 cp help.tmux.txt /usr/share/doc/byobu/help.tmux.txt
 
+
+if ! grep 'export TERM="xterm-256color"' ~/.bashrc; then
+    verbose "Appending line to .bashrc"
+    echo 'export TERM="xterm-256color"' >> ~/.bashrc
+fi
+ 
 verbose "Checking New Configs.."
 check_file /usr/share/byobu/keybindings/f-keys.tmux
 check_file /usr/share/doc/byobu/help.tmux.txt
