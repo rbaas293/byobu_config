@@ -5,7 +5,7 @@
 ./install_config.sh [-v|-verbose]
 ```
 
-## Manuel
+## Manual
 ```
 cd byobu
 
