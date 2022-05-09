@@ -1,5 +1,11 @@
 # How to Install Config
 
+## Dependecies
+```bash
+sudo apt install byobu -y
+OR...
+sudo dpkg -i byobu_5.133-0ubuntu1_all.deb
+```
 ## Install Script
 ```
 git submodule init && git submodule update

@@ -9,8 +9,10 @@ param switch v
 param switch verbose
 
 if ! command_exists byobu; then
-    write ${BLUE}"byobu Not Installed. Installing..."${RESET}
-    sudo apt install byobu -y
+    write ${BLUE}"byobu Not Installed. Please run the following..."${RESET}
+    write ${BLUE}"sudo apt install byobu -y"${RESET}
+	write ${BLUE}"OR..."
+	write ${BLUE}"sudo dpkg -i byobu_5.133-0ubuntu1_all.deb"${RESET}
 fi
 
 write ${BLUE}"Backing up Orignal Files."${RESET}
