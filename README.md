@@ -8,7 +8,7 @@ sudo dpkg -i byobu_5.133-0ubuntu1_all.deb
 ```
 ## Install Script
 ```
-git submodule init && git submodule update
+git clone --recurse-submodules -j8 https://github.com/rbaas293/byobu_config.git
 ./install_config.sh [-v|-verbose]
 ```
 
